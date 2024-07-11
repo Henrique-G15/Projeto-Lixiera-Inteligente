@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="vertical-center">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2>Atualizar Lixeira</h2>
+            </div>
+            <div class="card-body">
+                <form action="{{ url_for('lixeira.update_lixeira') }}" method="POST">
+                    <input type="hidden" name="id" value="{{ lixeira.id_lixeira }}">
+                    <div class="form-group">
+                        <label for="capacidade">Capacidade:</label>
+                        <input type="text" class="form-control" id="capacidade" name="capacidade" value="{{ lixeira.capacidade }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">Estado:</label>
+                        <input type="text" class="form-control" id="estado" name="estado" value="{{ lixeira.estado }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="localizacao">Localização:</label>
+                        <input type="text" class="form-control" id="localizacao" name="localizacao" value="{{ lixeira.localizacao }}" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Atualizar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

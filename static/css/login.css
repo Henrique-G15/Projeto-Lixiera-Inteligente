@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+html, body {
+    margin:0;
+    height:100%;
+    overflow:auto;
+    background: linear-gradient( #2196F3, #EDE89D);
+    /* background-color: #EDE89D; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+  }
+
+.container .forms{
+    margin-top: 50px;
+    padding-top: 50px;
+    border-color: black;
+}
+
+.container .view{
+    margin-top: 50px;
+    padding-top: 50px;
+}
+
+.view tr { height: 20px; }
+
+.vertical-center {
+    min-height: 90%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vertical-center img {
+    position: relative;
+    max-width: 100%;
+} 
+.form-check,
+.form-label{
+    padding-top: 10px;
+}
+
+.navbar {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    background-color: #5E5473;
+    justify-content: center;
+    align-content: center;
+    border: solid 2px;
+    border-color: #352e44;
+}
+
+.navbar-brand {
+    padding: 0px;
+    margin: 25px;
+    border-radius: 15px;
+    border: solid 4px;
+    border-color: #352e44;
+}
+
+input[type=submit] {
+    text-align: center;
+    background-color: #886ec0;
+    color: #000000;
+    border-radius: 8px;
+    border: dashed 2px;
+    margin: auto; 
+    display: block;
+    cursor: pointer; 
+}
+input[type=submit]:hover{
+    background-color: #19b6a5;
+}
+
+input[type=text], input[type=number] {
+    border-radius: 4px;
+    border: solid 2px;
+    border-color: #031614;
+    background-color: #19b6a5;
+}
+
+p {
+    align-self: center;
+}

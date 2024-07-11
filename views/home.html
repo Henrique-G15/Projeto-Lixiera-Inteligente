@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="vertical-center">
+    <div class="container">
+        <div class="card text-center" style="background-color: #6e56a3; border-radius: 15px; padding: 30px;">
+            <p class="text-white" style="font-size: 24px;">
+                <img src="{{ url_for('static', filename='img/bolt-solid.png') }}" style="max-width: 15px; border-radius: 10px; filter: invert(100%);">
+                <span>Bem-vindo ao Lixeiros Sena</span>
+                <img src="{{ url_for('static', filename='img/bolt-solid.png') }}" style="max-width: 15px; border-radius: 10px; filter: invert(100%);">
+            </p>
+            <p class="text-white" style="font-size: 18px;">Confira nosso sistema!!!</p>
+            <p class="text-white" style="font-size: 18px;">
+                <img src="{{ url_for('static', filename='img/arrow-up-solid.png') }}" style="max-width: 15px; border-radius: 10px; filter: invert(100%); float: left; margin-right: 5px;">
+                <span>Selecione uma das opções acima!</span>
+                <img src="{{ url_for('static', filename='img/arrow-up-solid.png') }}" style="max-width: 15px; border-radius: 10px; filter: invert(100%); float: right; margin-left: 5px;">
+            </p>
+        </div>               
+    </div>
+</div>
+{% endblock %}

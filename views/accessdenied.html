@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="vertical-center">
+    <div class="container">
+        <div class="card text-center" style="background-color: #df0f0f; border-radius: 15px; padding: 30px;">
+            <img src="{{ url_for('static', filename='img/alerta.png') }}"style="max-width: 50px;align-self:center;">
+            <p class="text-white" style="font-size: 24px;">
+                <span>Acesso negado!</span>
+            </p>
+            <p class="text-white" style="font-size: 18px;">Somente administradores podem acessar esta página.</p>
+            
+            <a href="/home"><button id="rejeitado" type="submit" class="btn btn-success"><b>INÍCIO</b><span class="sr-only">(current)</span></button></a>
+        </div>               
+    </div>
+</div>
+{% endblock %}

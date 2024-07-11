@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Usuários Cadastrados</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>CPF</th>
+                <th>ID da Lixeira</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.id_usuario }}</td>
+                <td>{{ usuario.nome }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>{{ usuario.cpf }}</td>
+                <td>{{ usuario.id_lixeira }}</td>
+                <td>
+                    <a href="{{ url_for('login_controller.edit_user', id=usuario.id_usuario) }}" class="btn btn-primary">Editar</a>
+                    <a href="{{ url_for('login_controller.del_user', id=usuario.id_usuario) }}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar este usuário?');">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="button-container">
+        <a href="{{ url_for('login_controller.register_user') }}" class="btn btn-success">Cadastrar Novo Usuário</a>
+    </div>
+</div>
+{% endblock %}

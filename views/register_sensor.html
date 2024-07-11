@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="vertical-center">
+    <div class="container">
+        <div class="card-lista">
+            <div class="card-header">
+            <div class="card-body">
+                    <form action="{{ url_for('sensor.add_sensor') }}" method="POST">
+                        <div style="text-align: center;">
+                            <img src="../static/img/sensor.png" height="50px" width="50px">
+                        </div>
+                        <div class="form-group">
+                            <label for="tipo_sensor">Tipo de Sensor:</label>
+                            <input type="text" id="tipo_sensor" name="tipo_sensor" class="form-control" placeholder="Tipo de Sensor" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_lixeira">ID da Lixeira:</label>
+                            <input type="number" id="id_lixeira" name="id_lixeira" class="form-control" placeholder="ID da Lixeira" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="topic">Topic:</label>
+                            <input type="text" id="topic" name="topic" class="form-control" placeholder="Topic" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

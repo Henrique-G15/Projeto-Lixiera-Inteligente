@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+    .vertical-center {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+    .card h5 {
+        font-weight: 500;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+    .table {
+        width: 100%;
+        margin-bottom: 1rem;
+        color: #212529;
+    }
+    .table th,
+    .table td {
+        padding: 0.75rem;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+        background-color: rgb(153, 139, 175);
+    }
+    .table thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #dee2e6;
+        background-color: rgb(215, 209, 235);
+    }
+
+    .table tbody + tbody {
+        border-top: 2px solid #dee2e6;
+    }
+</style>
+
+<div class="vertical-center">
+    <div class="container">
+        <div class="card last">
+            <div class="card-body" style="font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                <div style="width: 900px;" id="adicionar-fonte" class="box">
+                    <form method="POST" action="{{ url_for('real_time.tempo_real') }}">
+                        <div class="form-group">
+                            <label for="lixeira">Selecione a Lixeira:</label>
+                            <select name="lixeira" id="lixeira" class="form-control">
+                                <option value="" disabled selected>Selecione uma lixeira</option>
+                                {% for lixeira in lixeiras %}
+                                <option value="{{ lixeira.id_lixeira}}" {% if selected_lixeira and lixeira.id_lixeira == selected_lixeira.id_lixeira %}selected{% endif %}>Lixeira {{ lixeira.id_lixeira }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button id="temporeal" type="submit" class="btn btn-primary">Selecionar</button>
+                    </form>
+                    {% if atuadores or sensores %}
+                    <div id="informacoes-lixeira" class="mt-4">
+                        <h5>Sensores</h5>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>ID Sensor</th>
+                                    <th>Tipo de Sensor</th>
+                                    <th>ID Lixeira</th>
+                                    <th>Data Hora Registro</th>
+                                    <th>Dado</th>
+                                    <th>Imagem do Sensor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for sensor in sensores %}
+                                <tr>
+                                    <td>{{ sensor.id_sensor }}</td>
+                                    <td>{{ sensor.tipo_sensor }}</td>
+                                    <td>{{ sensor.id_lixeira }}</td>
+                                    <td>{{ sensor.data_hora_registro }}</td>
+                                    <td>{{ sensor.dado }}</td>
+                                    <td><img src="{{ sensor.caminho_imagem }}" width="30" height="30" alt="Imagem do sensor"></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+                        <h5>Atuadores</h5>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>ID Atuador</th>
+                                    <th>Tipo de Atuador</th>
+                                    <th>ID Lixeira</th>
+                                    <th>Data Hora Registro</th>
+                                    <th>Dado</th>
+                                    <th>Imagem do Atuador</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for atuador in atuadores %}
+                                <tr>
+                                    <td>{{ atuador.id_atuador }}</td>
+                                    <td>{{ atuador.tipo_atuador }}</td>
+                                    <td>{{ atuador.id_lixeira }}</td>
+                                    <td>{{ atuador.data_hora_registro }}</td>
+                                    <td>{{ atuador.dado }}</td>
+                                    <td><img src="{{ atuador.caminho_imagem }}" width="40" height="35" alt="Imagem do atuador"></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

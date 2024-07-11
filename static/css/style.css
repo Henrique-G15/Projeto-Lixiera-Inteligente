@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: auto;
+    background: linear-gradient( #2196F3, #EDE89D);
+    font-family: 'Roboto', sans-serif;
+}
+
+.texto_mqtt {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: bold;
+    color: white;
+}
+
+.response_mqtt {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: bold;
+    color: red;
+}
+
+.container .forms {
+    margin-top: 50px;
+    padding-top: 50px;
+    border-color: black;
+}
+
+.container.view {
+    margin-top: 50px;
+    padding-top: 50px;
+    background-color: #6e56a3;
+    border-radius: 15px;
+}
+
+.table .table-striped .table-bordered {
+    background-color: #EDE89D;
+}
+
+.view tr {
+    height: 20px;
+}
+
+.vertical-center {
+    min-height: 90%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: #6e56a3;
+    border-radius: 15px;
+}
+
+.vertical-center img {
+    position: relative;
+    max-width: 100%;
+}
+
+.form-check,
+.form-label {
+    padding-top: 10px;
+}
+
+.navbar {
+    background-color: #6e56a3; 
+    color: #bdb2d4; 
+}
+
+.navbar .nav-link {
+    color: #bdb2d4; 
+}
+
+.navbar .nav-link:hover {
+    color: #fff; 
+}
+
+.navbar .dropdown-menu {
+    background-color: #6e56a3; 
+}
+
+.navbar .dropdown-item {
+    color: #fff; 
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #4615b2; 
+}
+
+.bg-dark {
+    background-color: #5A4D6D;
+}
+
+.container p1 {
+    align-items: center;
+    text-align: center;
+    font-size: 60px;
+    font-family: "lucida console","monaco","courier new";
+}
+
+input[type=text], input[type=number] {
+    background-color: #3b3150;
+    color: #a78be2;
+    border-radius: 4px;
+    border: none;
+}
+
+.box {
+    color: #bdb2d4;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 50px;
+    font-size: 25px;
+    font-family: "lucida console","monaco","courier new";
+    text-align: center;
+    background-color: #6e56a3;
+    border-radius: 15px;
+}
+
+div#content {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 100px;
+}
+
+div.last {
+    color: #bdb2d4;
+    font-size: 25px;
+    justify-content: center;
+    align-content: center;
+    font-family: "lucida console","monaco","courier new";
+    padding: 35px;
+    background-color: #6e56a3;
+    border-radius: 15px;
+    border: solid 3px #3b3646;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+}
+
+form#tampa {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: "lucida console","monaco","courier new";
+    text-align: center;
+    background-color: #6e56a3;
+    border-radius: 15px;
+}
+
+button#open {
+    cursor: pointer;
+    margin-top: 15px;
+    background-color: #5E5473;
+    color: #bdb2d4;
+    border-radius: 15px;
+    border: dashed 3px;
+    transition: opacity 0.3s ease;
+}
+
+button#open:hover {
+    opacity: 0.7;
+}
+
+.btn-success {
+    background-color: #3b3150;
+    color: #bdb2d4;
+    border-radius: 15px;
+    border: none;
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.btn-success:hover {
+    opacity: 0.8;
+}
+
+input[type="password"]:not(:focus) {
+    box-shadow: inset 0 0 0 1px #3b3150; 
+    border: none; 
+}
+
+.eye {
+    background-color: #3b3150; 
+    border-color: #3b3150; 
+    cursor: pointer; 
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+.dropdown-menu {
+    background-color: #6e56a3;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item:hover {
+    background-color: rgb(102, 89, 131);
+    color: white;
+}
+
+/* Toggler On/Off */
+.toggle-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-wrapper .description {
+    margin-left: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    font-size: 1.4rem;
+}
+
+.switch {
+    position: relative;
+}
+
+.switch .hidden-toggle {
+    display: none;
+}
+
+.switch .slider {
+    background: #e0e2db;
+    border: 0.1rem solid #bbb;
+    cursor: pointer;
+    border-radius: 2rem;
+    transition: all 300ms ease-in-out;
+    width: 8rem;
+    height: 4rem;
+    position: relative;
+    box-shadow: inset -0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.switch .slider .button2 {
+    position: absolute;
+    width: 2.8rem;
+    height: 2.8rem;
+    background: #4615b2;
+    top: 0.5rem;
+    left: 0.4rem;
+    transition: all 300ms ease-in-out;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: inset -0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+}
+
+.switch .slider:after {
+    position: absolute;
+    top: 50%;
+    right: 0.05rem;
+    transform: translate(0, -50%);
+    font-size: 1rem;
+    line-height: 1.4rem;
+    color: #444;
+    font-weight: bold;
+    z-index: 1;
+    transition: all 300ms ease-in-out;
+    content: "Fechado";
+}
+
+.switch .hidden-toggle:checked ~ .slider {
+    background: #4615b2;
+    box-shadow: inset 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(50, 0, 150, 0.2);
+}
+
+.switch .hidden-toggle:checked ~ .slider .button2 {
+    left: 4.4rem;
+    background: #e0e2db;
+}
+
+.switch .hidden-toggle:checked ~ .slider:after {
+    right: 3.8rem;
+    color: #f1f1ff;
+    content: "Aberto";
+}
+.card-lista{
+    width: 300px;
+    background-color: #6e56a3;
+    border-radius: 15px;
+}
+
+#typeSelect, #itemSelect, #start, #end{
+    background-color: #3b3150;
+    color: #a78be2;
+    border-radius: 4px;
+    border: none;
+}
+#botaohistorico{
+    color: #bdb2d4;
+    background-color: #3b3150;
+    border-radius: 15px;
+    border: none;
+}
+
+#botaohistorico:hover{
+    background-color: #28a745;
+    border-radius: 15px;
+    border: none;
+}
+
+#tipo_atuador, #id_lixeira, #topic, #tipo_sensor, #nome, #email, #cpf, #senha {
+    background-color: #3b3150;
+    color: #a78be2;
+}
+#adicionar-fonte, #informacoes-lixeira{
+    font-family: "Roboto", sans-serif;
+}
+#lixeira, #temporeal{
+    background-color: #3b3150;
+    color: #a78be2;
+    border: none;
+}
+#temporeal{
+    border-radius: 15px;
+    cursor: pointer;
+}
+#temporeal:hover{
+    background-color: #28a745;
+    color: white;
+}
+#rejeitado{
+    background-color: #5c24d4;
+    display: inline-block;
+}
+#rejeitado:hover{
+    background-color: #28a745;
+    color: white;
+
+}
+a:hover, a:active, a:focus {
+    text-decoration: none;
+  }
+  
+
+button:hover, button:active, button:focus {
+    border: none;
+  }
+  

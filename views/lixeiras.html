@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Lixeiras Cadastradas</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Capacidade</th>
+                <th>Estado</th>
+                <th>Localização</th>
+                <th>Data</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for lixeira in lixeiras %}
+            <tr>
+                <td>{{ lixeira.id_lixeira }}</td>
+                <td>{{ lixeira.capacidade }}</td>
+                <td>{{ lixeira.estado }}</td>
+                <td>{{ lixeira.localizacao }}</td>
+                <td>{{ lixeira.data }}</td>
+                <td>
+                    <a href="{{ url_for('lixeira.edit_lixeira', id=lixeira.id_lixeira) }}" class="btn btn-primary">Editar</a>
+                    <a href="{{ url_for('lixeira.del_lixeira', id=lixeira.id_lixeira) }}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar esta lixeira?');">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('lixeira.register_lixeira') }}" class="btn btn-success">Cadastrar Nova Lixeira</a>
+</div>
+{% endblock %}

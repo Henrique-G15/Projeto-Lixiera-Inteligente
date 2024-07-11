@@ -1,0 +1,12 @@
+<html>
+    <body>
+    <form action="http://localhost:8080/del_user" method="post">
+        <select name="user" class="Input">
+            {% for key, value in devices.items() %}
+            <option>{{ key }}</option>
+            {% endfor %}
+            <p><input type = "submit" value = "Deletar" /></p>
+        </select>
+    </form>
+    </body>
+</html>

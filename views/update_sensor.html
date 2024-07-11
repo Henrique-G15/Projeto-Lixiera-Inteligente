@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Editar Sensor</h2>
+    <form action="{{ url_for('sensor.update_sensor', id=sensor.id_sensor) }}" method="POST">
+        <div class="form-group">
+            <label for="tipo_sensor">Tipo de Sensor:</label>
+            <input type="text" class="form-control" id="tipo_sensor" name="tipo_sensor" value="{{ sensor.tipo_sensor }}" required>
+        </div>
+        <div class="form-group">
+            <label for="id_lixeira">ID da Lixeira:</label>
+            <input type="number" class="form-control" id="id_lixeira" name="id_lixeira" value="{{ sensor.id_lixeira }}" required>
+        </div>
+        <div class="form-group">
+            <label for="topic">Topic:</label>
+            <input type="text" class="form-control" id="topic" name="topic" value="{{ sensor.topic }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <a href="{{ url_for('sensor.sensors') }}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

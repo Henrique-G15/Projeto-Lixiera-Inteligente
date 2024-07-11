@@ -1,0 +1,25 @@
+{% extends"base.html" %}
+{% block content%}
+<div class="vertical-center">
+    <div class="container">
+        <div class="card-lista">
+            <div class="card-header">
+                <div class="card-body">
+                    <form action= "http://localhost:8080/cadastrar_lixeira" method= "POST">
+                        <div style="text-align: center;">
+                            <img src="../static/img/trash-can-solid.png" height="50px" width="45px">
+                        </div>
+                        <p>Capacidade:</p>
+                        <p><input type = "text" class="form-control" name = "capacidade" placeholder="Capacidade" required/></p>
+                        <p>Estado:</p>
+                        <p><input type = "text" class="form-control" name = "estado" placeholder="Estado" required/></p>
+                        <p>Localização:</p>
+                        <p><input type = "text" class="form-control" name = "localizacao" placeholder="Localização" required/></p>
+                        <p><input type = "submit" class="btn btn-success custom-btn" value = "Cadastrar" /></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

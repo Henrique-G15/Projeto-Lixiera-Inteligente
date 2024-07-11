@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Editar Usuário</h2>
+    <form action="{{ url_for('login_controller.update_user', id=usuario.id_usuario) }}" method="POST">
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" value="{{ usuario.nome }}" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" name="email" value="{{ usuario.email }}" required>
+        </div>
+        <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input type="text" class="form-control" id="senha" name="senha" value="{{ usuario.senha }}" required>
+        </div>
+        <div class="form-group">
+            <label for="cpf">CPF:</label>
+            <input type="text" class="form-control" id="cpf" name="cpf" value="{{ usuario.cpf }}" required>
+        </div>
+        <div class="form-group">
+            <label for="id_lixeira">ID da Lixeira:</label>
+            <input type="number" class="form-control" id="id_lixeira" name="id_lixeira" value="{{ usuario.id_lixeira }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <a href="{{ url_for('login_controller.list_users') }}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

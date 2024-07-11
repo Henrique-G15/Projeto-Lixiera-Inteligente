@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Atuadores Cadastrados</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo de Atuador</th>
+                <th>ID da Lixeira</th>
+                <th>Topic</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for atuador in atuadores %}
+            <tr>
+                <td>{{ atuador.id_atuador }}</td>
+                <td>{{ atuador.tipo_atuador }}</td>
+                <td>{{ atuador.id_lixeira }}</td>
+                <td>{{ atuador.topic }}</td>
+                <td>
+                    <a href="{{ url_for('actuator.edit_actuator', id=atuador.id_atuador) }}" class="btn btn-primary">Editar</a>
+                    <a href="{{ url_for('actuator.del_actuator', id=atuador.id_atuador) }}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar este atuador?');">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('actuator.register_actuator') }}" class="btn btn-success">Cadastrar Novo Atuador</a>
+</div>
+{% endblock %}

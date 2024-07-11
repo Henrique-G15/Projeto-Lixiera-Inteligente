@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Editar Atuador</h2>
+    <form action="{{ url_for('actuator.update_actuator', id=actuator.id_atuador) }}" method="POST">
+        <div class="form-group">
+            <label for="tipo_atuador">Tipo de Atuador:</label>
+            <input type="text" class="form-control" id="tipo_atuador" name="tipo_atuador" value="{{ actuator.tipo_atuador }}" required>
+        </div>
+        <div class="form-group">
+            <label for="id_lixeira">ID da Lixeira:</label>
+            <input type="number" class="form-control" id="id_lixeira" name="id_lixeira" value="{{ actuator.id_lixeira }}" required>
+        </div>
+        <div class="form-group">
+            <label for="topic">Topic:</label>
+            <input type="text" class="form-control" id="topic" name="topic" value="{{ actuator.topic }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <a href="{{ url_for('actuator.actuators') }}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

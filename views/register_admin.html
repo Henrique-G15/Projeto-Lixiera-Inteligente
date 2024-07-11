@@ -1,0 +1,23 @@
+{% extends"base.html" %}
+{% block content%}
+<div class="vertical-center">
+    <div class="container">
+        <div class="card-lista">
+            <div class="card-header">
+                <div class="card-body">
+                    <form action= "http://localhost:8080/add_admin" method= "POST">
+                        <div style="text-align: center;">
+                            <img src="../static/img/user.png" height="50px" width="45px">
+                        </div>
+                        <p>Usuário:</p>
+                        <p><input type = "text" name = "user" placeholder="Usuário" required/></p>
+                        <p>Senha:</p>
+                        <p><input type = "text" name = "password" placeholder="Senha" required/></p>
+                        <p><input type = "submit" value = "Cadastrar" /></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

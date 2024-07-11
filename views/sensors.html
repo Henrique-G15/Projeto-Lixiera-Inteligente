@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2>Sensores Cadastrados</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tipo de Sensor</th>
+                <th>ID da Lixeira</th>
+                <th>Topic</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sensor in sensores %}
+            <tr>
+                <td>{{ sensor.id_sensor }}</td>
+                <td>{{ sensor.tipo_sensor }}</td>
+                <td>{{ sensor.id_lixeira }}</td>
+                <td>{{ sensor.topic }}</td>
+                <td>
+                    <a href="{{ url_for('sensor.edit_sensor', id=sensor.id_sensor) }}" class="btn btn-primary">Editar</a>
+                    <a href="{{ url_for('sensor.del_sensor', id=sensor.id_sensor) }}" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja deletar este sensor?');">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('sensor.register_sensor') }}" class="btn btn-success">Cadastrar Novo Sensor</a>
+</div>
+{% endblock %}
